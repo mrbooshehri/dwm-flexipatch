@@ -51,7 +51,7 @@
  * Patch: https://gist.github.com/danbyl/54f7c1d57fc6507242a95b71c3d8fdea
  * https://dwm.suckless.org/patches/statuscmd/
  */
-#define BAR_DWMBLOCKS_SIGUSR1_PATCH 0
+#define BAR_DWMBLOCKS_SIGUSR1_PATCH 1
 
 /* This patch shows the titles of all visible windows in the status bar
  * (as opposed to showing only the selected one).
@@ -121,7 +121,7 @@
 /* This patch adds a clickable button to the left hand side of the statusbar.
  * https://dwm.suckless.org/patches/statusbutton/
  */
-#define BAR_STATUSBUTTON_PATCH 0
+#define BAR_STATUSBUTTON_PATCH 1
 
 /* This patch adds the ability to execute shell commands based on the mouse button and position
  * when clicking the status bar. Refer to the website for usage.
@@ -150,7 +150,7 @@
 /* The systray patch adds systray for the status bar.
  * https://dwm.suckless.org/patches/systray/
  */
-#define BAR_SYSTRAY_PATCH 0
+#define BAR_SYSTRAY_PATCH 1
 
 /* Show tag symbols in the bar. */
 #define BAR_TAGS_PATCH 1
@@ -322,12 +322,12 @@
 /* Allows the bar height to be explicitly set rather than being derived from font.
  * https://dwm.suckless.org/patches/bar_height/
  */
-#define BAR_HEIGHT_PATCH 0
+#define BAR_HEIGHT_PATCH 1
 
 /* This patch prevents dwm from drawing tags with no clients (i.e. vacant) on the bar.
  * https://dwm.suckless.org/patches/hide_vacant_tags/
  */
-#define BAR_HIDEVACANTTAGS_PATCH 0
+#define BAR_HIDEVACANTTAGS_PATCH 1
 
 /* With this patch dwm's built-in status bar is only shown when HOLDKEY is pressed
  * and the bar will now overlay the display.
@@ -439,7 +439,7 @@
  * This patch takes precedence over ATTACHBELOW_PATCH.
  * https://dwm.suckless.org/patches/attachaside/
  */
-#define ATTACHASIDE_PATCH 0
+#define ATTACHASIDE_PATCH 1
 
 /* This patch adds new clients below the selected client.
  * This patch takes precedence over ATTACHBOTTOM_PATCH.
@@ -458,7 +458,7 @@
  * than the original ~/.dwm folder.
  * https://dwm.suckless.org/patches/autostart/
  */
-#define AUTOSTART_PATCH 0
+#define AUTOSTART_PATCH 1
 
 /* By default, windows that are not visible when requesting a resize/move will not
  * get resized/moved. With this patch, they will.
@@ -505,7 +505,7 @@
  * hold MOD and then press and hold 1 and 3 together.
  * https://dwm.suckless.org/patches/combo/
  */
-#define COMBO_PATCH 0
+#define COMBO_PATCH 1
 
 /* Allow dwm to execute commands from autostart array in your config.h file. When dwm exits
  * then all processes from autostart array will be killed.
@@ -525,7 +525,7 @@
  * like chromium (with "Use system title bar and borders" turned off) or vlc in fullscreen mode.
  * https://dwm.suckless.org/patches/decoration_hints/
  */
-#define DECORATION_HINTS_PATCH 0
+#define DECORATION_HINTS_PATCH 1
 
 /* This feature distributes all clients on the current monitor evenly across all tags.
  * It is a variant of the reorganizetags patch.
@@ -551,7 +551,7 @@
  *    #cp -f patch/dwmc ${DESTDIR}${PREFIX}/bin
  * http://dwm.suckless.org/patches/dwmc/
  */
-#define DWMC_PATCH 0
+#define DWMC_PATCH 1
 
 /* This patch allows no tag at all to be selected. The result is that dwm will start with
  * no tag selected and when you start a client with no tag rule and no tag selected then
@@ -582,7 +582,7 @@
  * Also see the selectivefakefullscreen option that adds a rule option to enabled this on client
  * startup.
  */
-#define FAKEFULLSCREEN_CLIENT_PATCH 0
+#define FAKEFULLSCREEN_CLIENT_PATCH 1
 
 /* This patch adds a float rule allowing the size and position of floating windows to be specified
  * It also allows the size and position of floating windows to be controlled similar to the
@@ -689,7 +689,7 @@
  * applications that assume that the window manager is using window reparenting.
  * Refer to the ISSUES secton of the dwm man page for more details.
  */
-#define LG3D_PATCH 0
+#define LG3D_PATCH 1
 
 /* By default in dwm it is possible to make an application fullscreen, then use
  * the focusstack keybindings to focus on other windows beneath the current window.
@@ -750,7 +750,7 @@
  * Zoom video conferencing application.
  * https://github.com/bakkeby/patches/wiki/netclientliststacking/
  */
-#define NET_CLIENT_LIST_STACKING_PATCH 0
+#define NET_CLIENT_LIST_STACKING_PATCH 1
 
 /* Removes the border when there is only one window visible.
  * https://dwm.suckless.org/patches/noborder/
@@ -761,7 +761,7 @@
  * compilation error because two lines of code hardcode dmenu into dwm.
  * https://dwm.suckless.org/patches/nodmenu/
  */
-#define NODMENU_PATCH 0
+#define NODMENU_PATCH 1
 
 /* This patch allows for toggleable client button bindings that have no modifiers.
  * This can, for example, allow you to move or resize using the mouse alone without holding
@@ -783,7 +783,7 @@
  * https://github.com/szatanjl/dwm/commit/1529909466206016f2101457bbf37c67195714c8
  * https://dwm.suckless.org/patches/alpha/dwm-fixborders-6.2.diff
  */
-#define NO_TRANSPARENT_BORDERS_PATCH 0
+#define NO_TRANSPARENT_BORDERS_PATCH 1
 
 /* Port of InstantWM's on_empty_keys functionality allowing keybindings that apply only when
  * a tag is empty. An example use case is being able to launch applications with first hand
@@ -807,7 +807,7 @@
  * monitor (default).
  * https://dwm.suckless.org/patches/pertag/
  */
-#define PERTAG_PATCH 0
+#define PERTAG_PATCH 1
 
 /* Option to store gaps on a per tag basis rather than on a per monitor basis.
  * Depends on both pertag and vanitygaps patches being enabled.
@@ -955,7 +955,7 @@
  * clients that will abuse it.
  * https://dwm.suckless.org/patches/sizehints/
  */
-#define SIZEHINTS_PATCH 0
+#define SIZEHINTS_PATCH 1
 
 /* This patch makes dwm obey even "soft" sizehints for new clients. This ruled
  * version is essentially the same patch except it obeys the "isfloating" rule
@@ -1018,7 +1018,7 @@
  *
  * https://dwm.suckless.org/patches/swallow/
  */
-#define SWALLOW_PATCH 0
+#define SWALLOW_PATCH 1
 
 /* This patch depends on the pertag patch and makes it possible to switch focus with a single
  * shortcut (MOD+s) instead of having to think if you should use mod-j or mod-k for reaching
@@ -1170,7 +1170,7 @@
  * https://github.com/bakkeby/patches/blob/master/dwm/dwm-vanitygaps-6.2.diff
  * https://github.com/bakkeby/patches/blob/master/dwm/dwm-cfacts-vanitygaps-6.2.diff
  */
-#define VANITYGAPS_PATCH 0
+#define VANITYGAPS_PATCH 1
 
 /* This patch adds outer gaps for the monocle layout.
  * Most gaps patches tries to avoid gaps on the monocle layout, as it is often used as a
@@ -1209,13 +1209,13 @@
  * https://www.x.org/archive/X11R7.5/doc/input/XKB-Config.html
  * https://dwm.suckless.org/patches/xkb/
  */
-#define XKB_PATCH 0
+#define XKB_PATCH 1
 
 /* Allows dwm to read colors from xrdb (.Xresources) during runtime. Compatible with
  * the float border color, awesomebar, urgentborder and titlecolor patches.
  * https://dwm.suckless.org/patches/xrdb/
  */
-#define XRDB_PATCH 0
+#define XRDB_PATCH 1
 
 /* Simple patch that allows floating windows to be zoomed into the master stack position.
  * https://www.reddit.com/r/suckless/comments/ie5fe3/zoomfloating_my_own_simple_original_patch/
@@ -1245,12 +1245,12 @@
 /* Centered master layout.
  * https://dwm.suckless.org/patches/centeredmaster/
  */
-#define CENTEREDMASTER_LAYOUT 0
+#define CENTEREDMASTER_LAYOUT 1
 
 /* Centered floating master layout.
  * https://dwm.suckless.org/patches/centeredmaster/
  */
-#define CENTEREDFLOATINGMASTER_LAYOUT 0
+#define CENTEREDFLOATINGMASTER_LAYOUT 1
 
 /* Same as the default tile layout except clients in the master area are arranged in
  * columns (i.e. left to right).

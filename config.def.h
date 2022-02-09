@@ -2,12 +2,12 @@
 
 /* appearance */
 #if ROUNDED_CORNERS_PATCH
-static const unsigned int borderpx       = 0;   /* border pixel of windows */
+static const unsigned int borderpx       = 2;   /* border pixel of windows */
 static const int corner_radius           = 10;
 #else
-static const unsigned int borderpx       = 1;   /* border pixel of windows */
+static const unsigned int borderpx       = 2;   /* border pixel of windows */
 #endif // ROUNDED_CORNERS_PATCH
-static const unsigned int snap           = 32;  /* snap pixel */
+static const unsigned int snap           = 30;  /* snap pixel */
 #if SWALLOW_PATCH
 static const int swallowfloating         = 0;   /* 1 means swallow floating windows by default */
 #endif // SWALLOW_PATCH
@@ -15,10 +15,10 @@ static const int swallowfloating         = 0;   /* 1 means swallow floating wind
 static int nomodbuttons                  = 1;   /* allow client mouse button bindings that have no modifier */
 #endif // NO_MOD_BUTTONS_PATCH
 #if VANITYGAPS_PATCH
-static const unsigned int gappih         = 20;  /* horiz inner gap between windows */
-static const unsigned int gappiv         = 10;  /* vert inner gap between windows */
-static const unsigned int gappoh         = 10;  /* horiz outer gap between windows and screen edge */
-static const unsigned int gappov         = 30;  /* vert outer gap between windows and screen edge */
+static const unsigned int gappih         = 4;  /* horiz inner gap between windows */
+static const unsigned int gappiv         = 4;  /* vert inner gap between windows */
+static const unsigned int gappoh         = 4;  /* horiz outer gap between windows and screen edge */
+static const unsigned int gappov         = 4;  /* vert outer gap between windows and screen edge */
 static const int smartgaps_fact          = 1;   /* gap factor when there is only one client; 0 = no gaps, 3 = 3x outer gaps */
 #endif // VANITYGAPS_PATCH
 #if AUTOSTART_PATCH
@@ -47,7 +47,7 @@ static const int showtab                 = showtab_auto;        /* Default tab b
 static const int toptab                  = False;               /* False means bottom tab bar */
 #endif // TAB_PATCH
 #if BAR_HEIGHT_PATCH
-static const int bar_height              = 0;   /* 0 means derive from font, >= 1 explicit height */
+static const int bar_height              = 26;   /* 0 means derive from font, >= 1 explicit height */
 #endif // BAR_HEIGHT_PATCH
 #if BAR_PADDING_PATCH
 static const int vertpad                 = 10;  /* vertical padding of bar */
@@ -85,7 +85,7 @@ static const int horizpadbar             = 2;   /* horizontal padding for status
 static const int vertpadbar              = 0;   /* vertical padding for statusbar */
 #endif // BAR_STATUSPADDING_PATCH
 #if BAR_STATUSBUTTON_PATCH
-static const char buttonbar[]            = "<O>";
+static const char buttonbar[]            = "";
 #endif // BAR_STATUSBUTTON_PATCH
 #if BAR_SYSTRAY_PATCH
 static const unsigned int systrayspacing = 2;   /* systray spacing */
@@ -127,7 +127,7 @@ static void (*bartabmonfns[])(Monitor *) = { NULL /* , customlayoutfn */ };
 #if BAR_PANGO_PATCH
 static const char font[]                 = "monospace 10";
 #else
-static const char *fonts[]               = { "monospace:size=10" };
+static const char *fonts[]               = { "Open Sans:size=11", "Font Awesome 6 Pro Regular:size=10" };
 #endif // BAR_PANGO_PATCH
 static const char dmenufont[]            = "monospace:size=10";
 
@@ -348,7 +348,7 @@ static const char *layoutmenu_cmd = "layoutmenu.sh";
 
 #if COOL_AUTOSTART_PATCH
 static const char *const autostart[] = {
-	"st", NULL,
+	"alacritty", NULL,
 	NULL /* terminate */
 };
 #endif // COOL_AUTOSTART_PATCH
@@ -442,6 +442,42 @@ static const Rule rules[] = {
 	#if SCRATCHPADS_PATCH
 	RULE(.instance = "spterm", .tags = SPTAG(0), .isfloating = 1)
 	#endif // SCRATCHPADS_PATCH
+	// MINE
+	RULE(.wintype = WTYPE "DIALOG", .isfloating = 1)
+	RULE(.wintype = WTYPE "UTILITY", .isfloating = 1)
+	RULE(.wintype = WTYPE "TOOLBAR", .isfloating = 1)
+	RULE(.wintype = WTYPE "SPLASH", .isfloating = 1)
+	RULE(.class = "Alacritty", .isterminal= 1)
+	RULE(.class = "MEGAsync", .isfloating = 1)
+	RULE(.class = "Skype", .isfloating = 1)
+	RULE(.class = "Safeeyes", .isfloating = 1)
+	RULE(.class = "Variety", .isfloating = 1)
+	RULE(.class = "Gpick", .isfloating = 1)
+	RULE(.class = "SpeedCrunch", .isfloating = 1)
+	RULE(.class = "VirtualBox Manager", .isfloating = 1)
+	RULE(.class = "Software-properties-gtk", .isfloating = 1)
+	RULE(.class = "Gnome-calendar", .isfloating = 1)
+	RULE(.class = "Gnome-calculator", .isfloating = 1)
+	RULE(.class = "Blueman-manager", .isfloating = 1)
+	RULE(.class = "Pavucontrol", .isfloating = 1)
+	RULE(.class = "Hamster", .isfloating = 1)
+	RULE(.class = "Orage", .isfloating = 1)
+	RULE(.class = "Firefox", .tags = 1 << 1)
+	RULE(.class = "Brave-browser", .tags = 1 << 1)
+	RULE(.class = "LibreWolf", .tags = 1 << 1)
+	RULE(.class = "firefox", .tags = 1 << 1)
+	RULE(.class = "qutebrowser", .tags = 1 << 1)
+	RULE(.class = "Code", .tags = 1 << 2)
+	RULE(.class = "jetbrains-studio", .tags = 1 << 2)
+	RULE(.class = "obs", .tags = 1 << 3)
+	RULE(.class = "korganizer", .tags = 1 << 4)
+	RULE(.class = "Gpodder", .tags = 1 << 5)
+	RULE(.class = "Tor Browser", .tags = 1 << 6)
+	RULE(.class = "Transmission-gtk", .tags = 1 << 6)
+	RULE(.class = "Rambox", .tags = 1 << 7)
+	RULE(.class = "TelegramDesktop", .tags = 1 << 7)
+	RULE(.class = "Signal", .tags = 1 << 7)
+	RULE(.class = "Spotify", .tags = 1 << 8)
 };
 
 #if MONITOR_RULES_PATCH
@@ -707,13 +743,13 @@ static const Layout layouts[] = {
 #if XKB_PATCH
 /* xkb frontend */
 static const char *xkb_layouts[]  = {
-	"en",
-	"ru",
+	"[EN]",
+	"[FA]",
 };
 #endif // XKB_PATCH
 
 /* key definitions */
-#define MODKEY Mod1Mask
+#define MODKEY Mod4Mask
 #if COMBO_PATCH && SWAPTAGS_PATCH && TAGOTHERMONITOR_PATCH
 #define TAGKEYS(KEY,TAG) \
 	{ MODKEY,                       KEY,      comboview,      {.ui = 1 << TAG} }, \
@@ -813,7 +849,7 @@ static const char *dmenucmd[] = {
 	#endif // BAR_DMENUMATCHTOP_PATCH
 	NULL
 };
-static const char *termcmd[]  = { "st", NULL };
+static const char *termcmd[]  = { "alacritty", NULL };
 
 #if BAR_STATUSCMD_PATCH
 #if BAR_DWMBLOCKS_PATCH
